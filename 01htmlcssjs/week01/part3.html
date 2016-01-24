@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dating Web Site</title>
+    <style>
+        fieldset {
+            border:10px solid yellow;
+            background: lightyellow;
+            margin-bottom: 10px;
+            width: 720px;
+        }
+        label {
+            width: 180px;
+            display: inline-block;
+            text-align: right;
+            vertical-align: top;
+            padding-right: 2px;
+        }
+
+        span {
+            text-align: center;
+            vertical-align: top;
+        }
+
+        textarea {
+            width: 360px;
+            height: 50px;
+        }
+
+        .radio, .check {
+            width: auto;
+        }
+
+        .red, .purple {
+            display: inline-block;
+            width: 60px;
+        }
+
+        .red {
+            background-color: #b7000d;
+        }
+
+        .purple {
+            background-color: #920081;
+        }
+
+        label:hover, input:hover {
+            font-size:20px
+        }
+
+    </style>
+</head>
+<body>
+<h1>Please Enter Your Details For Our Dating Website!</h1>
+
+<form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="get" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Your Face</legend>
+        <label for="photo">Your image:</label><input id="photo" name="photo" type="file" required><br>
+        <label for="preview">Image preview:</label><img id="preview">
+    </fieldset>
+
+    <fieldset>
+        <legend>Your General Details</legend>
+        <label for="name">Name:</label><input id="name" name="name" type="text" required><br>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required><label class="radio" for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required><label class="radio" for="female">Female</label><br>
+        <label for="age">Age:</label><input id="age" name="age" type="number" required><br>
+        <label for="date">Date of birth:</label><input id="date" name="date" type="date"><br>
+        <label for="color">Favorite color:</label><input id="color" name="color" type="color"><br>
+        <label for="country">Your country:</label>
+        <select id="country" name="country">
+            <option value="no_selection" selected></option>
+            <option value="japan">Japan</option>
+            <option value="ukraine">Ukraine</option>
+            <option value="gb">Great Britain</option>
+            <option value="usa">USA</option>
+            <option value="brazil">Brazil</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your indicators</legend>
+        <label for="height">Height:</label><span class="red">Short</span><input id="height" name="height" type="range" min="0" max="100" step="10"><span class="purple">Tall</span><br>
+        <label for="salary">Salary:</label><span class="red">Poor</span><input id="salary" name="salary" type="range" min="0" max="100" step="10"><span class="purple">Rich</span><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your Contact Information</legend>
+        <label for="email">Email:</label><input id="email" type="email" required><br>
+        <label for="mobile">Mobile:</label><input id="mobile" type="tel"><br>
+        <label for="address">Address:</label><textarea id="address"></textarea><br>
+        <label>Methdd to contact you:</label>
+        <input type="radio" id="cemail" name="contact" value="email"><label class="check" for="cemail">Email</label>
+        <input type="radio" id="cwhatsupp" name="contact" value="whatsupp"><label class="check" for="cwhatsupp">Whatsupp</label>
+        <input type="radio" id="cchat" name="contact" value="chat"><label class="check" for="cchat">In-app chat</label>
+    </fieldset>
+
+    <input type="submit">
+</form>
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+</body>
+</html>
