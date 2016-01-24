@@ -1,0 +1,9 @@
+body {
+    font-family: sans-serif, Helvetica, Arial;
+}
+
+#confirmation {
+    color: #b7000d;
+    font-size: 16px;
+    text-align: center;
+}
