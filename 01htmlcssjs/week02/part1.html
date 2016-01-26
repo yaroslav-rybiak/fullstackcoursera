@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Part 1</title>
+    <script>
+        var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+        var random = Math.floor(Math.random()*7);
+
+        function do_game() {
+            alert("The color is " + colors[random]);
+            while(true) {
+                var user_guess = prompt("I think about one of the colors from the list:\n\n" +
+                        "blue, green, indigo, orange, red, violet, yellow.\n\n" +
+                        "Try to guess my color.");
+                if(user_guess === colors[random]) {
+                    document.body.style.backgroundColor = colors[random];
+                    break;
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="do_game();"></body>
+</html>

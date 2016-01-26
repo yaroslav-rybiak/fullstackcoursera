@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Color guessing game</title>
+    <title>Part 2</title>
     <script>
         var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
-        var random = Math.floor(Math.random()*7); //a number from 0 to 7
+        var random = Math.floor(Math.random()*7);
+        var guess_number = 0;
 
-        function start_game() {
+        function do_game() {
             var finished = false;
             alert("The color is " + colors[random]);
             while(!finished) {
                 var user_guess = prompt("I think about one of the colors from the list:\n\n" +
                         "blue, green, indigo, orange, red, violet, yellow.\n\n" +
                         "Try to guess my color.");
-                finished = guessing(user_guess);
+                guess_number++;
+                finished = check_guess(user_guess);
             }
         }
 
-        function guessing(user_guess) {
+        function check_guess(user_guess) {
             if (!contains(colors, user_guess)) {
-                alert("Please enter a color from the list!");
+                alert("I don't recognize that color!");
                 return false;
             }
 
@@ -35,7 +37,12 @@
 
             if (user_guess === colors[random]) {
                 document.body.style.backgroundColor = colors[random];
-                alert("You guessed right!");
+                if (guess_number > 1) {
+                    alert("You guessed right!\nYou took " + guess_number + " guesses!");
+                }
+                else {
+                    alert("You guessed right!\nYou took only 1 guess!");
+                }
                 return true;
             }
         }
@@ -45,5 +52,5 @@
         }
     </script>
 </head>
-<body onload="start_game();"></body>
+<body onload="do_game();"></body>
 </html>
