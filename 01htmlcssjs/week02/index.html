@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JavaScript, CSS</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Color guessing game</title>
+    <script>
+        var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+        var random = Math.floor(Math.random()*7); //a number from 0 to 7
+
+        function start_game() {
+            var finished = false;
+            alert("The color is " + colors[random]);
+            while(!finished) {
+                var user_guess = prompt("I think about one of the colors from the list:\n\n" +
+                        "blue, green, indigo, orange, red, violet, yellow.\n\n" +
+                        "Try to guess my color.");
+                finished = guessing(user_guess);
+            }
+        }
+
+        function guessing(user_guess) {
+            if (!contains(colors, user_guess)) {
+                alert("Please enter a color from the list!");
+                return false;
+            }
+
+            if (user_guess > colors[random]) {
+                alert("Your color is alphabetically higher than mine.");
+                return false;
+            }
+
+            if (user_guess < colors[random]) {
+                alert("Your color is alphabetically lower than mine.");
+                return false;
+            }
+
+            if (user_guess === colors[random]) {
+                document.body.style.backgroundColor = colors[random];
+                alert("You guessed right!");
+                return true;
+            }
+        }
+
+        function contains(colors, color) {
+            return colors.indexOf(color.toLowerCase()) > -1;
+        }
+    </script>
 </head>
-<body>
-<p id="confirmation"></p>
-<script src="script.js"></script>
-</body>
+<body onload="start_game();"></body>
 </html>
