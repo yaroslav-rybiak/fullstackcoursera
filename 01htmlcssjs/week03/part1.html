@@ -7,6 +7,20 @@
             height: 100%;
             margin: 0;
         }
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        h1 {
+            text-transform: uppercase;
+            font-size: 33px;
+        }
+        #top {
+            color: #333333;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
         #leftSide {
             height: 100%;
             width: 50%;
@@ -14,11 +28,17 @@
         }
         #rightSide {
             height: 100%;
-            border-left: solid 1px black;
+            border-left: solid 1px #555555;
             float: left;
         }
-        h1, p {
+        h1 {
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
             padding-left: 20px;
+            margin: 10px 0 0 0;
+        }
+        p {
+            padding-left: 20px;
+            margin: 0 0 0 0
         }
         img {
             position: absolute;
@@ -26,9 +46,10 @@
     </style>
 </head>
 <body>
+
 <div id="top">
     <h1>Matching Game</h1>
-    <p>Click on the extra smiling face in the left.</p>
+    <p>Click on the extra smiling face in the left</p>
 </div>
 <div id="leftSide"></div>
 <div id="rightSide"></div>
