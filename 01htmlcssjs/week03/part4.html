@@ -64,22 +64,40 @@
     var numberOfFaces = 5;
     var theLeftSide = document.getElementById("leftSide");
     var theRightSide = document.getElementById("rightSide");
+    var theBody = document.getElementsByTagName("body")[0];
 
     function generateFaces() {
         for (var i = 0; i < numberOfFaces; i++) {
             rand_top = Math.floor((Math.random() * 400));
             rand_left = Math.floor((Math.random() * 400));
             var img = document.createElement("img");
-            img.src = 'smile.png';
+            img.src = 'http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png';
             img.style.top = rand_top + 'px';
             img.style.left = rand_left + 'px';
             theLeftSide.appendChild(img);
         }
         var leftSideImages = theLeftSide.cloneNode(true);
         leftSideImages.removeChild(leftSideImages.lastChild);
-        console.log(leftSideImages);
         theRightSide.appendChild(leftSideImages);
+
+        theLeftSide.lastChild.onclick = function nextLevel(event) {
+            while (theLeftSide.firstChild) {
+                theLeftSide.removeChild(theLeftSide.firstChild)
+            }
+            while (theRightSide.firstChild) {
+                theRightSide.removeChild(theRightSide.firstChild)
+            }
+            event.stopPropagation();
+            numberOfFaces += 5;
+            generateFaces();
+        };
+        theBody.onclick = function gameOver() {
+            alert("Game Over!");
+            theBody.onclick = null;
+            theLeftSide.lastChild.onclick = null;
+        };
     }
+
     window.onload = generateFaces;
 </script>
 </body>
