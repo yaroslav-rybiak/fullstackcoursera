@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Matching Game Part 2</title>
+    <title>Matching Game Part 3</title>
     <style>
         html, body {
             height: 100%;
@@ -63,6 +63,7 @@
     var rand_left;
     var numberOfFaces = 5;
     var theLeftSide = document.getElementById("leftSide");
+    var theRightSide = document.getElementById("rightSide");
 
     function generateFaces() {
         for (var i = 0; i < numberOfFaces; i++) {
@@ -74,6 +75,10 @@
             img.style.left = rand_left + 'px';
             theLeftSide.appendChild(img);
         }
+        var leftSideImages = theLeftSide.cloneNode(true);
+        leftSideImages.removeChild(leftSideImages.lastChild);
+        console.log(leftSideImages);
+        theRightSide.appendChild(leftSideImages);
     }
     window.onload = generateFaces;
 </script>

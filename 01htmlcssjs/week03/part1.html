@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Matching game</title>
+    <meta charset="UTF-8">
+    <title>Matching Game Part 1</title>
     <style>
         html, body {
             height: 100%;
@@ -22,12 +23,16 @@
             bottom: 0;
         }
         #leftSide {
-            height: 100%;
-            width: 50%;
+            position: absolute;
+            height: 500px;
+            width: 500px;
             float: left;
         }
         #rightSide {
-            height: 100%;
+            position: absolute;
+            left: 500px;
+            height: 500px;
+            width: 500px;
             border-left: solid 1px #555555;
             float: left;
         }
@@ -44,9 +49,9 @@
             position: absolute;
         }
     </style>
+
 </head>
 <body>
-
 <div id="top">
     <h1>Matching Game</h1>
     <p>Click on the extra smiling face in the left</p>
