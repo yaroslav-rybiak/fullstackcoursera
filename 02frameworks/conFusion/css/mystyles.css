@@ -68,3 +68,14 @@ address{
 .panel-margined {
     margin-top: 20px;
 }
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.nav-tabs > li > a:focus, .nav-pills > li > a:focus {
+    outline:none;
+}
