@@ -97,3 +97,9 @@ address{
     left: 33%;
     right: 10%;
 }
+
+#carouselButtons {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+}
