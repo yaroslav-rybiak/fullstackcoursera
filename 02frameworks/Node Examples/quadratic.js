@@ -16,4 +16,4 @@ module.exports = function(a,b,c,next) {
                 return (-b + Math.sqrt(disc(a,b,c)))/(2*a);
             }
         });
-}
+};
