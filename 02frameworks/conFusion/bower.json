@@ -1,0 +1,27 @@
+{
+  "name": "conFusion",
+  "homepage": "https://coursera.org",
+  "authors": [
+    "Yaroslav Rybiak"
+  ],
+  "description": "Website for restaurant",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "confusion",
+    "restaurant"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0",
+    "bootstrap-social": "^4.12.0"
+  }
+}
