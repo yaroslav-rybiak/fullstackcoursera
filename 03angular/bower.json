@@ -1,0 +1,22 @@
+{
+  "name": "angularapp",
+  "description": "My first angular app",
+  "main": "index.html",
+  "authors": [
+    "Yaroslav Rybiak <yaroslav.rybiak@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/yaroslav-rybiak/fullstackcoursera",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6"
+  }
+}
