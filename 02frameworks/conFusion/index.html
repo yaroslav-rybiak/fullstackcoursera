@@ -57,8 +57,8 @@
                 <li><a href="contactus.html"><i class="fa fa-envelope-o"></i>&nbsp;Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href data-toggle="modal" data-target="#loginModal">
-                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                <li><a href="#" id="login" >
+                    <span class="glyphicon glyphicon-log-in"></span>&nbsp;Login</a>
                 </li>
             </ul>
         </div>
@@ -162,7 +162,7 @@
                     <div class="form-group">
                         <label for="reserveButton" class="col-sm-2 control-label sr-only">Reserve</label>
                         <div class="form-inline">
-                            <a class="btn btn-primary" id="reserveButton">Reserve</a>
+                            <button class="btn btn-primary">Reserve</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
 
@@ -193,7 +193,7 @@
             </div>
             <div class="col-xs-12 col-sm-2">
                 <p style="padding:40px;"></p>
-                <a href type="button" data-toggle="modal" data-target="#reserveModal" class="btn btn-primary btn-warning btn-block">Reserve Table</a>
+                <button id="reserveButton" type="button" class="btn btn-primary btn-warning btn-block">Reserve Table</button>
             </div>
         </div>
     </div>
@@ -416,15 +416,29 @@
         });
     });
     //end of navbar fix
-</script>
-<script>
+
+    //carousel
     $(document).ready(function(){
-        $("#mycarousel").carousel( { interval: 1000 } );
+        $("#mycarousel").carousel( { interval: 3000 } );
         $("#carousel-pause").click(function(){
             $("#mycarousel").carousel('pause');
         });
         $("#carousel-play").click(function(){
             $("#mycarousel").carousel('cycle');
+        });
+    });
+
+    //show reserve modal by clicking on reserve table button
+    $(function() {
+        $("#reserveButton").click(function() {
+            $('#reserveModal').modal('show');
+        });
+    });
+
+    //show login modal by clicking on login link
+    $(function() {
+        $("#login").click(function() {
+            $('#loginModal').modal('show');
         });
     });
 </script>
